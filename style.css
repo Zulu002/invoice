@@ -1,14 +1,9 @@
 @font-face {
     font-family: 'YourFont';
-    src: url('./fonts/Norse-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@viewport {
-    width: device-width;
-    zoom: 1.0;
+    src: url('fonts/Norse-Bold.ttf') format('truetype');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 * {
@@ -22,7 +17,6 @@ body {
     background: #F5FAFE;
     min-height: 100vh;
     padding: 20px;
-    -webkit-text-size-adjust: 100%;
 }
 
 .container {
@@ -32,7 +26,7 @@ body {
 }
 
 h1 {
-    font-family: 'YourFont', Arial, sans-serif;
+    font-family: 'YourFont';
     text-align: left;
     color: #5546F9;
     margin-bottom: 5px;
@@ -46,7 +40,7 @@ h1 {
 }
 
 .date {
-    font-family: 'YourFont', Arial, sans-serif;
+    font-family: 'YourFont';
     text-align: left;
     color: #060612;
     font-size: 1.5em;
@@ -54,48 +48,142 @@ h1 {
     font-weight: 500;
 }
 
-/* Остальной ваш CSS остается без изменений... */
 
-/* Добавленные медиа-запросы */
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-        max-width: 100%;
-    }
-    
-    h1 {
-        font-size: 1.8em;
-    }
-    
-    .date {
-        font-size: 1.2em;
-    }
-    
-    .item-row {
-        gap: 8px;
-        margin-bottom: 12px;
-    }
-    
-    .quantity, .price, .total {
-        min-width: 60px;
-    }
-    
-    input {
-        padding: 8px;
-        font-size: 14px;
+.item-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.quantity, .price {
+    flex: 1;
+    min-width: 80px;
+}
+
+.total {
+    flex: 1;
+    min-width: 80px;
+    border-bottom: 3px solid #060612;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #5546F9;
+}
+
+input {
+    background: #F5FAFE;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 3px solid #060612;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #5546F9;
+}
+
+.add-btn {
+    font-family: 'YourFont';
+    font-size: 2em;
+    width: 100%;
+    padding: 15px;
+    background: #060612;
+    color: #F5FAFE;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 10px 0;
+}
+
+
+.total-section {
+    background: #5546F9;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-label {
+    font-family: 'YourFont';
+    font-size: 1.5em;
+    color: #F5FAFE;
+    font-weight: bold;
+}
+
+.total-amount {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #F5FAFE;
+}
+
+.delete-btn {
+    font-family: 'YourFont';
+    background: #5546F9;
+    color: #F5FAFE;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-row {
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { 
+        opacity: 1;
     }
 }
 
-@media (max-width: 360px) {
+.removing {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@media (max-width: 480px) {
     .container {
-        padding: 5px;
+        padding: 15px;
     }
     
-    h1 {
-        font-size: 1.5em;
+    .item-row {
+        flex-wrap: nowrap;
     }
     
-    .date {
-        font-size: 1em;
+    .quantity, .price, .total {
+        min-width: 70px;
+    }
+    
+    input {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .add-btn {
+        padding: 12px;
+    }
+    
+    .header-row {
+        display: flex;
     }
 }
