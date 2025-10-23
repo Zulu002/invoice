@@ -163,6 +163,20 @@ input:focus {
     text-align: center;
 }
 
+.alert {
+    font-family: 'YourFont';
+    padding: 10px 15px;
+    background: #ffebee; /* Мягкий красный фон */
+    border: 1px solid #fcc2c8; /* Светлая красная граница */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #c62828; /* Насыщенный красный для текста */
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 @keyframes fadeIn {
     to { 
         opacity: 1;
