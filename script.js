@@ -29,7 +29,7 @@ function addItemRow() {
     const row = document.createElement('div');
     row.className = 'item-row new-row';
     row.innerHTML = `
-        <input type="number" class="quantity" placeholder="Кол-во/вес" id="qty${itemCount}" min="0" step="0.001" oninput="calculateAll()">
+        <input type="number" class="quantity" placeholder="Кол/вес" id="qty${itemCount}" min="0" step="0.001" oninput="calculateAll()">
         <input type="number" class="price" placeholder="Цена" id="price${itemCount}" min="0" step="0.01" oninput="calculateAll()">
         <div class="total" id="total${itemCount}">Сумма</div>
         <button type="button" class="delete-btn" onclick="deleteRow(this)">✕</button>
