@@ -150,6 +150,21 @@ input:focus {
     animation: fadeIn 0.3s ease forwards;
 }
 
+.hint {
+    font-family: 'YourFont';
+    padding: 15px;
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #1565c0;
+    text-align: center;
+    width: 100%; /* Добавьте это */
+    box-sizing: border-box; /* Убедитесь, что padding включен в ширину */
+}
+
 @keyframes fadeIn {
     to { 
         opacity: 1;
