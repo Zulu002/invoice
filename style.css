@@ -97,7 +97,7 @@ input:focus {
     color: #F5FAFE;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
