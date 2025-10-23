@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор накладных</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор накладных</h1>
+        
+        <div class="divider"></div>
+
+        <div class="date" id="currentDate">мм</div>
+
+        <div class="divider"></div>
+
+        <div id="itemsContainer"></div>
+        
+        <div class="total-section">
+            <div class="total-label">Общая сумма:</div>
+            <div class="total-amount" id="totalAmount">0 ₽</div>
+        </div>
+        
+        <button class="add-btn" onclick="addItemRow()">Добавить позицию</button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
