@@ -192,8 +192,23 @@ input:focus {
     box-sizing: border-box;
 }
 
+.instructions{
+   padding: 10px 0px 0px 0px;
+}
+
+.instructions-link{
+    font-size: 18px;
+    font-family: 'YourFont';
+    color: #5546F9;
+    outline: none;
+}
+
+.instructions-link:active{
+    color: #c62828;
+}
+
 .developer {
-    padding: 10px 0px;
+    padding: 5px 0px 0px 0px;
     font-size: 12px;
     color: #646363;
     text-align: left;
@@ -204,6 +219,10 @@ input:focus {
     color: #5546F9;
     outline: none;
     text-decoration: none;
+}
+
+.accent:active{
+    color: #c62828;
 }
 
 @keyframes fadeIn {
