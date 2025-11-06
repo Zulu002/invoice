@@ -103,6 +103,7 @@ input:focus {
     cursor: pointer;
     margin: 10px 0;
     transition:all 0.15s ease;
+    user-select: none;
 }
 
 .add-btn:active{
