@@ -21,6 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateDate, 24 * 60 * 60 * 1000);
 });
 
+function changeLastItemRow() {
+    const itemM = document.querySelectorAll("item-row");
+    itemM.forEach((itemRow, index) => {
+        if (index < itemM.length-1){itemRow.className = 'item-row new-row'}
+        else (itemRow.className = 'item-row new-row endRow')
+    });
+    focusOnLastRow();
+}
+
+function focusOnLastRow() {
+    document.querySelector('endRow').scrollIntoView({behavior: 'smooth',block:'end'})
+}
+
 
 function addItemRow() {
     itemCount++;
@@ -40,6 +53,7 @@ function addItemRow() {
     setTimeout(() => {
         document.getElementById('qty' + itemCount).focus();
     }, 100);
+    changeLastItemRow();
 }
 
 function calculateAll() {
