@@ -28,6 +28,7 @@ function changeLastItemRow() {
         else (itemRow.className = 'item-row new-row endRow')
     });
     focusOnLastRow();
+
 }
 
 function focusOnLastRow() {
