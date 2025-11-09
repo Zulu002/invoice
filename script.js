@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function changeLastItemRow() {
-    const itemM = document.querySelectorAll("item-row");
+    const itemM = document.querySelectorAll(".item-row");
     itemM.forEach((itemRow, index) => {
         if (index < itemM.length-1){itemRow.className = 'item-row new-row'}
         else (itemRow.className = 'item-row new-row endRow')
@@ -31,7 +31,7 @@ function changeLastItemRow() {
 }
 
 function focusOnLastRow() {
-    document.querySelector('endRow').scrollIntoView({behavior: 'smooth',block:'center'})
+    document.querySelector('.endRow')?.scrollIntoView({behavior: 'smooth',block:'center'})
 }
 
 
