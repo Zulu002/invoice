@@ -53,7 +53,7 @@ function addItemRow() {
     setTimeout(() => {
         document.getElementById('qty' + itemCount).focus();
     }, 100);
-    changeLastItemRow();
+    focusOnLastRow();
 }
 
 function calculateAll() {
