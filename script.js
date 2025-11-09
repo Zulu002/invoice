@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // }
 
 function focusOnLastRow() {
-    document.querySelector('.add-btn')?.scrollIntoView({behavior: 'smooth',block: 'nearest'})
+    document.querySelector('.add-btn')?.scrollIntoView({behavior: 'smooth',block: 'center'})
 }
 
 
