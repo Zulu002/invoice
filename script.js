@@ -24,17 +24,27 @@ document.addEventListener('DOMContentLoaded', function() {
 function changeLastItemRow() {
     const itemM = document.querySelectorAll(".item-row");
     itemM.forEach((itemRow, index) => {
-        if (index < itemM.length-1){itemRow.className = 'item-row new-row'}
-        else (itemRow.className = 'item-row new-row endRow')
+        if (index < itemM.length-1) {
+            itemRow.className = 'item-row new-row';
+        } else {
+            itemRow.className = 'item-row new-row endRow';
+        }
     });
-    focusOnLastRow();
-
 }
 
 function focusOnLastRow() {
-    document.querySelector('.endRow')?.scrollIntoView({behavior: 'smooth',block:'center'})
+    const endRow = document.querySelector('.endRow');
+    if (endRow) {
+        // Плавный скролл с задержкой для полного рендера
+        setTimeout(() => {
+            endRow.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest'
+            });
+        }, 150);
+    }
 }
-
 
 function addItemRow() {
     itemCount++;
@@ -51,10 +61,14 @@ function addItemRow() {
     
     itemsContainer.appendChild(row);
     
-    setTimeout(() => {
-        document.getElementById('qty' + itemCount).focus();
-    }, 100);
+    // Сначала меняем классы
     changeLastItemRow();
+    
+    // Затем плавный скролл и фокус
+    setTimeout(() => {
+        focusOnLastRow();
+        document.getElementById('qty' + itemCount).focus();
+    }, 200);
 }
 
 function calculateAll() {
