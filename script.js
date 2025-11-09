@@ -31,7 +31,7 @@ function changeLastItemRow() {
 }
 
 function focusOnLastRow() {
-    document.querySelector('.endRow')?.scrollIntoView({behavior: 'smooth',block: 'nearest'})
+    document.querySelector('.endRow')?.scrollIntoView({behavior: 'smooth',block:'center'})
 }
 
 
