@@ -21,17 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateDate, 24 * 60 * 60 * 1000);
 });
 
-// function changeLastItemRow() {
-//     const itemM = document.querySelectorAll(".item-row");
-//     itemM.forEach((itemRow, index) => {
-//         if (index < itemM.length-1){itemRow.className = 'item-row new-row'}
-//         else (itemRow.className = 'item-row new-row endRow')
-//     });
-//     focusOnLastRow();
-// }
+function changeLastItemRow() {
+    const itemM = document.querySelectorAll(".item-row");
+    itemM.forEach((itemRow, index) => {
+        if (index < itemM.length-1){itemRow.className = 'item-row new-row'}
+        else (itemRow.className = 'item-row new-row endRow')
+    });
+    focusOnLastRow();
+}
 
 function focusOnLastRow() {
-    document.querySelector('.add-btn')?.scrollIntoView({behavior: 'smooth',block:'end'})
+    document.querySelector('.endRow')?.scrollIntoView({behavior: 'smooth',block:'start'})
 }
 
 
@@ -53,7 +53,7 @@ function addItemRow() {
     setTimeout(() => {
         document.getElementById('qty' + itemCount).focus();
     }, 100);
-    focusOnLastRow();
+    changeLastItemRow();
 }
 
 function calculateAll() {
